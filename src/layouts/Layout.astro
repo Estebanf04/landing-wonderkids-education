@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import "@fontsource-variable/quicksand";
+import "@fontsource/courgette"; 
+import {ReactLenis} from 'lenis/react'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/Logo.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>WonderKids Education</title>
+	</head>
+	<body>
+		<ReactLenis root client:load>
+			<slot/>
+		</ReactLenis>
+	</body>
+</html>
