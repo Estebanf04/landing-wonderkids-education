@@ -1,0 +1,18 @@
+---
+import type { Question } from './Faqs.astro'
+
+interface Props {
+    questionFirstLine: string,
+    questionSecLine?: string
+}
+
+const {questionFirstLine, questionSecLine} = Astro.props as Question
+---
+
+<div class="cursor-pointer group hover:shadow-md hover:shadow-[#704FE6]/50 transition-shadow duration-300 border border-[#121212]/24 rounded-[80px] flex items-center justify-between px-8 py-6">
+	<p class="text-[#121212] text-xl sm:text-2xl font-medium">
+        {questionFirstLine} <br class="hidden sm:block"> 
+        {questionSecLine}
+    </p>
+	<div class="hidden sm:block w-14 h-14 bg-[#704FE6]/10 group-hover:bg-[#704FE6]/20 transition-colors duration-300 rounded-full"/>
+</div>

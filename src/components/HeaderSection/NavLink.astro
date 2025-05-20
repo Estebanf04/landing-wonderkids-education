@@ -1,0 +1,12 @@
+---
+import type { NavLinkType } from './Header.astro'
+
+const { href, title } = Astro.props as NavLinkType
+---
+
+<a 
+ class="border hover:bg-slate-50 border-[#121212]/24 rounded-full px-5 py-1" 
+ href={href}
+>
+{title}
+</a>

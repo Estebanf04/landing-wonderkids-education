@@ -1,0 +1,11 @@
+---
+interface Props {
+    links: string[]
+}
+
+const { links } = Astro.props
+---
+
+<div class="flex flex-col gap-2 cursor-pointer">
+	{ links.map((link) => <p>{link}</p>) }
+</div>

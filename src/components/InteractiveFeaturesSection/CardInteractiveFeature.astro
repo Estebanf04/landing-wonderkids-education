@@ -1,0 +1,53 @@
+---
+import type { InteractiveFeatureType } from "./InteractiveFeatures.astro"
+import Insignia from "./InteractiveFeaturesDecorations/CardOne/Insignia.astro";
+import Spiral from "./InteractiveFeaturesDecorations/CardOne/Spiral.astro";
+import InsigniaTwo from "./InteractiveFeaturesDecorations/CardTwo/Insignia.astro";
+import Stain from "./InteractiveFeaturesDecorations/CardTwo/Stain.astro";
+import InsigniaThree from "./InteractiveFeaturesDecorations/CardThree/Insignia.astro";
+import SmallsCircles from "./InteractiveFeaturesDecorations/CardThree/SmallsCircles.astro";
+
+const {
+    componentOne,
+    componentTwo,
+    bgColor,
+    titleFirstLine,
+    titleSecLine,
+    subtitleFirstLine,
+    subtitleSecLine,
+    textColor
+} = Astro.props as InteractiveFeatureType
+
+const components = {
+  Insignia,
+  Spiral,
+  InsigniaTwo,
+  Stain,
+  InsigniaThree,
+  SmallsCircles
+} as const;
+
+type ComponentsMap = typeof components;
+type ComponentsName = keyof ComponentsMap;
+
+const c1 = componentOne as ComponentsName;
+const c2 = componentTwo as ComponentsName;
+
+const ComponentOne = components[c1];
+const ComponentTwo = components[c2];
+---
+
+<div class={`relative bg-[${bgColor}] h-[448px] px-10 py-12 rounded-[64px] space-y-8 overflow-clip hover:scale-105 hover:shadow-lg hover-[${bgColor}]/80 transition-all duration-300`}>
+    {ComponentOne && <ComponentOne/>}
+
+    <h1 class={`${textColor === "WHITE" ? 'text-white' : 'text-black'} text-5xl font-semibold`}>
+        {titleFirstLine} <br> 
+        <span class="courgette font-normal">{titleSecLine}</span>
+    </h1>
+
+	<p class={`${textColor === "WHITE" ? 'text-white' : 'text-black/80'} text-lg font-medium`}>
+        {subtitleFirstLine} <br> {subtitleSecLine}
+    </p>
+
+    {ComponentTwo && <ComponentTwo/>}
+</div>

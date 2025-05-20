@@ -1,0 +1,66 @@
+---
+import WordsGalaxy from "./InteractiveFeaturesDecorations/WordsGalaxy.astro";
+import CardInteractiveFeature from "./CardInteractiveFeature.astro";
+
+export type InteractiveFeatureType = {
+	componentOne: string,
+    componentTwo: string,
+    bgColor: string,
+    titleFirstLine: string,
+    titleSecLine: string,
+    subtitleFirstLine: string,
+    subtitleSecLine: string,
+    textColor: "BLACK" | "WHITE"
+}
+
+const interactiveFeatures : InteractiveFeatureType[] = [
+	{
+		componentOne: "Insignia",
+		componentTwo: "Spiral",
+		bgColor: "#DEC8FE",
+		titleFirstLine: "Fun",
+		titleSecLine: "Quiz",
+		subtitleFirstLine: "Test your understanding with a short",
+		subtitleSecLine: "but fun quizzes!",
+		textColor: "BLACK"
+	},
+	{
+		componentOne: "InsigniaTwo",
+		componentTwo: "Stain",
+		bgColor: "#704FE6",
+		titleFirstLine: "Creative",
+		titleSecLine: "Activities",
+		subtitleFirstLine: "Discover enjoyable activities such as",
+		subtitleSecLine: "coloring, crafting, and science.",
+		textColor: "WHITE"
+	},
+	{
+		componentOne: "InsigniaThree",
+		componentTwo: "SmallsCircles",
+		bgColor: "#FFD25D",
+		titleFirstLine: "Learn with",
+		titleSecLine: "Games",
+		subtitleFirstLine: "Learn something new while your kids",
+		subtitleSecLine: "playing games!",
+		textColor: "BLACK"
+	}
+]
+---
+
+<section class="my-20 px-4 py-10 sm:max-w-[1350px] 2xl:max-w-[1550px] mx-auto space-y-24 sm:space-y-0">
+		<div class="flex flex-col sm:flex-row gap-y-8 sm:gap-y-0 items-center justify-normal sm:justify-between">
+			<h1 class="text-[64px] leading-18 font-medium">
+				Our 
+				<span class="courgette text-[#704FE6]">interactive</span><br>
+				features
+			</h1>
+
+			<div class="relative text-[#121212] text-lg">
+				<WordsGalaxy/>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-4 sm:mt-8">
+			{ interactiveFeatures.map((feature) => <CardInteractiveFeature {...feature}/>) }
+		</div>
+</section>

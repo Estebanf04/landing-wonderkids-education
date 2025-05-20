@@ -1,0 +1,56 @@
+---
+import DropdownMenu from "./DropdownMenu";
+import NavLink from "./NavLink.astro";
+import ButtonCTA from "../ButtonCTA.astro";
+
+export type NavLinkType = {
+	href: string,
+	title: string
+}
+
+const NavLinks : NavLinkType[] = [
+	{
+		href: "#home",
+		title: "Home"
+	},
+	{
+		href: "#teachers",
+		title: "Our teachers"
+	},
+	{
+		href: "#contact",
+		title: "Contact"
+	}
+]
+---
+
+<div class="bg-[#704FE6] mb-5 py-2">
+	<p class="text-white font-medium text-center">¡Take advantage of the current 15% discount!</p>
+</div>
+
+<header class="px-6 sm:px-12 flex justify-between items-center text-[#121212] sm:max-w-[1350px] 2xl:max-w-[1550px] mx-auto">
+	<a 
+	  href="/" 
+	  class="flex items-center gap-3"
+	>
+		<img 
+		  src="./Logo.png" 
+		  alt="Logo"
+		  width="28"
+		>
+		<p class="font-semibold text-2xl">WonderKids</p>
+	</a>
+
+	<nav class="hidden sm:flex gap-4 text-sm">
+		{ NavLinks.map((link) => (
+			<NavLink {...link}/>
+		)) }
+	</nav>
+
+	<div class="hidden sm:flex gap-4 font-semibold items-center">
+		<a class="cursor-pointer">Sign In</a>
+		<ButtonCTA text="Contact Us" colorType="WHITE"/>
+	</div>
+
+	<DropdownMenu client:load/>
+</header>

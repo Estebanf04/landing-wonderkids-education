@@ -1,0 +1,61 @@
+---
+import ButtonCTA from "../ButtonCTA.astro";
+import Stain from "./LearningMaterialsDecoration/Stain.astro";
+import Spiral from "./LearningMaterialsDecoration/Spiral.astro";
+import Ring from "./LearningMaterialsDecoration/Ring.astro";
+import YellowInsignia from "./LearningMaterialsDecoration/YellowInsignia.astro";
+---
+
+<section class="my-20 py-10 sm:max-w-[1350px] 2xl:max-w-[1550px] mx-auto px-4 w-full"> 
+		<div class="flex flex-col sm:flex-row items-center justify-between gap-y-14 sm:gap-y-0">
+			<div class="relative space-y-10">
+				<h1 class="text-[64px] leading-18 font-medium">
+					The learning materials <br> 
+					provided are 
+					<span class="courgette text-[#704FE6]">enjoyable</span> <br> 
+					for children
+				</h1>
+
+				<p class="text-[18px] text-[#636363] font-medium">
+					Don’t worry! Your children will be having a fun time while learning with our <br> 
+					materials that are easy to understand.
+				</p>
+				
+				<ButtonCTA 
+				  text="Learn more" 
+				  colorType="WHITE"
+				/>
+				
+				<Ring/>
+			</div>
+
+			<div class="flex flex-col items-end gap-6 w-full sm:w-auto">
+				<figure class="relative w-[75%] sm:w-[327px] h-[147px] bg-[#DEC8FE] rounded-full">
+					<img 
+					  src="./images/littlegirl3.png" 
+					  alt="littlegirl3"
+					  class="absolute bottom-0 left-10 z-10"
+					>
+					<YellowInsignia/>
+				</figure>
+
+				<figure class="relative w-[85%] sm:w-[460px] h-[147px] bg-[#704FE6] rounded-full">
+					<img 
+					  src="./images/littlegirl2.png" 
+					  alt="littlegirl2"
+					  class="absolute -bottom-0.5 right-2 z-10"
+					>
+					<Stain/>
+				</figure>
+
+				<figure class="relative w-full sm:w-[532px] h-[147px] bg-[#FFD25D] rounded-full">
+					<img 
+					  src="./images/littlegirl1.png" 
+					  alt="littlegirl1"
+					  class="absolute -bottom-0.5 left-12 z-10"
+					>
+					<Spiral/>
+				</figure>
+			</div>
+		</div>
+</section>

@@ -1,0 +1,46 @@
+---
+import ArrowPurple from "./HeroDecorations/ArrowPurple.astro"
+import KidInCircle from "./HeroDecorations/KidInCircle.astro"
+import KidDown from "./HeroDecorations/KidDown.astro"
+import Spiral from "./HeroDecorations/Spiral.astro"
+import SmallCircle from "./HeroDecorations/SmallCircle.astro"
+import Insignia from "./HeroDecorations/Insignia.astro"
+import ButtonCTA from "../ButtonCTA.astro";
+import LearnUnderlined from "./HeroDecorations/LearnUnderlined.astro"
+import PlayUnderlined from "./HeroDecorations/PlayUnderlined.astro"
+---
+
+<section 
+  id="home" 
+  class="my-24 px-4"
+>
+	<div class="relative sm:max-w-5xl mx-auto text-start sm:text-center flex flex-col justify-center items-start sm:items-center gap-12">
+		<h1 class="text-[#121212] text-[70px] leading-[85px] sm:text-[112px] sm:leading-[100px] font-medium z-10">
+			The best place to 
+			<span class="relative courgette text-[#704FE6]">
+				learn <LearnUnderlined/>
+			</span> 
+			and 
+			<span class="relative courgette text-[#FFB802]">
+				play <PlayUnderlined/>
+			</span>
+			<br class="hidden sm:block"> 
+			for kids
+		</h1>
+			<p class="text-2xl sm:text-[18px] text-[#636363] z-10">
+				Discover thousands of fun and interactive learning activities <br> 
+				to support your child's growth and learning process.
+			</p>
+			<ButtonCTA 
+			  text="Get started" 
+			  colorType="PURPLE" 
+			/>
+
+			<Spiral/>
+			<KidInCircle/>
+			<ArrowPurple/>
+			<KidDown/>
+			<SmallCircle/>
+			<Insignia/>
+	</div>
+</section>

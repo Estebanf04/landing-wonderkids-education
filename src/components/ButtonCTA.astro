@@ -1,0 +1,25 @@
+---
+import { GoArrowUpRight } from "react-icons/go";
+
+interface Props {
+    text: string,
+    colorType: "PURPLE" | "WHITE"
+}
+
+const { text, colorType } = Astro.props
+---
+
+<a 
+ href="#contact" 
+ class={`
+ ${colorType === "WHITE" 
+    ? 'w-fit border border-[#704FE6] rounded-full text-[#704FE6] pl-5 pr-3 py-1.5 flex items-center gap-3 group hover:shadow-md hover:shadow-[#704FE6]/50 transition-shadow duration-300'
+    : 'w-fit text-white bg-[#704FE6] text-xl flex gap-4 font-semibold items-center py-3 px-6 sm:px-4 rounded-full shadow-lg shadow-[#704FE6]/50 group hover:scale-105 transition-transform duration-300'
+  }`}
+>
+	{text}
+	<div class={`${colorType === "WHITE" ? 'bg-[#704FE6]' : 'bg-white'} p-3 rounded-full group-hover:rotate-45 transition-transform duration-300`}>
+		<GoArrowUpRight color={colorType === "WHITE" ? '#ffffff' : '#704FE6'}/>
+	</div>				
+</a>
+
